@@ -62,7 +62,7 @@ class GeneralSettingController extends SettingController
         $invalidMessage = 'Your license is invalid. Please activate your license!';
 
         $licenseFilePath = $core->getLicenseFilePath();
-
+        
         if (! File::exists($licenseFilePath)) {
             $this
                 ->httpResponse()

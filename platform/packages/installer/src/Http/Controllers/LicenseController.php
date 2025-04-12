@@ -38,7 +38,7 @@ class LicenseController extends BaseController
         try {
             $licenseKey = $request->input('purchase_code');
 
-            $core->activateLicense($licenseKey, $buyer);
+            // $core->activateLicense($licenseKey, $buyer);
 
             Setting::forceSet('licensed_to', $buyer)->save();
 

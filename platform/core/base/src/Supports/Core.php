@@ -125,7 +125,7 @@ final class Core
             $lastSkipDate = $lastSkipDateTimeString ? Carbon::parse($lastSkipDateTimeString) : null;
 
             if ($lastSkipDate instanceof Carbon && Carbon::now()->lessThanOrEqualTo($lastSkipDate)) {
-                return true;
+                return false;
             }
 
             $this->clearLicenseReminder();
