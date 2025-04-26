@@ -151,11 +151,12 @@ final class Core
 
     public function checkConnection(): bool
     {
-        return $this->cache->remember(
-            "license:{$this->getLicenseCacheKey()}:check_connection",
-            Carbon::now()->addDays($this->verificationPeriod),
-            fn () => rescue(fn () => $this->createRequest('check_connection_ext')->ok()) ?: false
-        );
+        // return $this->cache->remember(
+        //     "license:{$this->getLicenseCacheKey()}:check_connection",
+        //     Carbon::now()->addDays($this->verificationPeriod),
+        //     fn () => rescue(fn () => $this->createRequest('check_connection_ext')->ok()) ?: false
+        // );
+        return true;
     }
 
     public function version(): string
